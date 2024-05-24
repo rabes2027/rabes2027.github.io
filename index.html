@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart</title>
+<style>
+      body{
+        font-family: fallout;
+        color: #10c110;
+        background-color: rgb(23, 21, 21);
+        font-size: 25px;
+    }
+    
+    @font-face {
+        font-family: fallout;
+        src: url(WHITRABT.TTF);
+    }
+    .cart{
+      background-color:rgb(23, 21, 21) ;
+      color: #10c110;
+      border-style: dashed;
+    }
+    button{
+      background-color:rgb(23, 21, 21);
+      border-style: dashed;
+      color:#10c110;
+      text-align: center;
+      border-color: #10c110;
+      font-family: fallout;
+      font-size: 19px;
+    }
+    img{
+      width: 30%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .header img {
+      padding-top: 5px;
+      padding-left: 5px;
+      float: left;
+      width: 100px;
+      height: 100px;
+      background:rgb(23, 21, 21);
+    }
+
+    .header h1 {
+      position: relative;
+      top: 18px;
+      left: 10px;
+    }
+    button:hover{
+      box-shadow: 0px 0px 5px #10c110;
+    }
+    .carousel {
+  overflow: hidden;
+  white-space: nowrap;
+  width: calc(100vw + 20px); 
+  margin: 0 auto;
+}
+
+#product-list {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+#product-list2 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+#product-list3 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+#product-list4 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+#product-list li {
+  flex: 0 0 33.33%;
+  margin: 0 10px; 
+}
+#product-list2 li {
+  flex: 0 0 33.33%;
+  margin: 0 10px; 
+}
+#product-list3 li {
+  flex: 0 0 33.33%;
+  margin: 0 10px; 
+}
+#product-list4 li {
+  flex: 0 0 33.33%;
+  margin: 0 10px; 
+}
+
+.carousel-button {
+  display: none; 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color:rgb(23, 21, 21); 
+  color: #10c110;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-style: dashed;
+  border-color: #10c110;
+}
+
+#product-carousel:hover .carousel-button {
+  display: block;
+}
+
+.carousel-button-left {
+  left: 10px; 
+}
+
+.carousel-button-right {
+  right: 10px; 
+}
+nav {
+  background-color:rgb(23, 21, 21); 
+  color:#10c110; 
+  padding: 10px; 
+  border: #10c110;
+  border-style: dashed;
+}
+
+nav ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0; 
+  display: flex; 
+}
+
+nav li {
+  margin-right: 20px; 
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+nav a:hover {
+  color: #00ff7b; 
+}
+#product-list2 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+#product-list5 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+#product-list6 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+#product-list7 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+#product-list2 li {
+  flex: 0 0 33.33%; 
+  margin: 0 10px; 
+}
+
+.carousel-button {
+  display: none; 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color:rgb(23, 21, 21);
+  color: #10c110;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-style: dashed;
+  border-color: #10c110;
+}
+
+#product-carousel2:hover .carousel-button {
+  display: block;
+}
+
+.carousel-button-left {
+  left: 10px; 
+}
+
+.carousel-button-right {
+  right: 10px; 
+}
+</style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+  </nav>
+  <div class="header">
+    <img src="vault_boy.png" alt="">
+    <h1>Vault-Tec Shop:</h1>
+  </div>
+  <div id="products">
+    <h2>Products</h2>
+    <h3>Nuka-Cola:</h3>
+    <div id="product-carousel" class="carousel slide">
+      <ul id="product-list">
+          <li><div><img src="Nuka_C.jpg" alt=""></div><div>Nuka Cola Regular - 10 Caps</div> <button onclick="add('Nuka Cola Regular', 10)">Add to Cart</button></li>
+          <li><div><img src="Nuka_Quantum.jpg" alt=""></div><div>Nuka Quantum - 100 caps</div> <button onclick="add('Nuka Quantum', 100)">Add to Cart</button></li>
+          <li><div><img src="Nuka_Dark.jpg" alt=""></div><div>Nuka Dark - 50 caps</div> <button onclick="add('Nuka Dark', 50)">Add to Cart</button></li>
+          <li><div><img src="Nuka_grape.jpg" alt=""></div><div>Nuka Grape - 20 caps</div> <button onclick="add('Nuka Grape', 20)">Add to Cart</button></li>
+          <li><div><img src="Nuka_orange.jpg" alt=""></div><div>Nuka Orange - 20 caps</div> <button onclick="add('Nuka Orange', 20)">Add to Cart</button></li>
+          <li><div><img src="Nuka_Cheryy.jpg" alt=""></div><div>Nuka Cherry - 20 caps</div> <button onclick="add('Nuka Cherry', 20)">Add to Cart</button></li>
+      </ul>
+      <button class="carousel-button carousel-button-left">&laquo;</button>
+      <button class="carousel-button carousel-button-right">&raquo;</button>
+    </div>
+    <h3>Armor:</h3>
+    <div id="product-carousel2" class="carousel slide">
+      <ul id="product-list2">
+          <li><div class="carousel-item"><img src="vault_suit.jpg" alt=""></div><div>Vault jumpsuit - 50 Caps</div> <button onclick="add('Vault Jumpsuit', 50)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="NCR.jpg" alt=""></div><div>NCR Ranger- 500 caps</div> <button onclick="add('NCR Ranger', 500)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="t-60.jpg" alt=""></div><div>T-60 Power Armor - 999 caps</div> <button onclick="add('T-60 Power Armor', 999)">Add to Cart</button></li>
+      </ul>
+      <button class="carousel-button carousel-button-left">&laquo;</button>
+      <button class="carousel-button carousel-button-right">&raquo;</button>
+    </div>
+      <div id="product-carousel3" class="carousel slide">
+        <ul id="product-list3">
+          <li><div class="carousel-item"><img src="sturdy.jpg" alt=""></div><div>Sturdy armor - 200 caps</div> <button onclick="add('Sturdy Armor', 200)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="Armored_Vault_suit.jpg" alt=""></div><div>Vault Dweller - 150 caps</div> <button onclick="add('Vault Dweller', 150)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="enclave.jpg" alt=""></div><div>Enclave Power Armor - 999 caps</div> <button onclick="add('Enclave Power Armor', 999)">Add to Cart</button></li>
+        </ul>
+      </div>
+    <h3>Tech:</h3>
+    <div id="product-carousel4" class="carousel slide">
+      <ul id="product-list4">
+        <li><div class="carousel-item"><img src="pipboy.jpg" alt=""></div><div>Pip Boy Mark IV - 800 Caps</div> <button onclick="add('Pip Boy Mark IV', 800)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="stimpak.jpg" alt=""></div><div>Stimpak - 100 caps</div> <button onclick="add('Stimpak', 100)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="pboy_mark6.jpg" alt=""></div><div>Pip Boy Mark VI - 800 caps</div> <button onclick="add('Pip Boy Mark VI', 800)">Add to Cart</button></li>
+      </ul>
+    </div>
+    <div id="product-carousel5" class="carousel slide">
+    <ul id="product-list5">
+          <li><div class="carousel-item"><img src="fusion_core.jpg" alt=""></div><div>Fusion Core - 999 caps</div> <button onclick="add('Fusion Core', 999)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="terminal.jpg" alt=""></div><div>Vault Terminal - 450 caps</div> <button onclick="add('Vault Terminal', 450)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="Codsworth.jpg" alt=""></div><div>Codsworth - 899 caps</div> <button onclick="add('Codsworth', 899)">Add to Cart</button></li>
+    </ul>
+  </div>
+    <h3>Vault Pass:</h3>
+    <div id="product-carousel6" class="carousel slide">
+      <ul id="product-list6">
+          <li><div class="carousel-item"><img src="Vault76.jpg" alt=""></div><div>Vault 76 - 200 Caps</div> <button onclick="add('Vault 76', 200)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="Vault4.jpg" alt=""></div><div>Vault 4 - 200 caps</div> <button onclick="add('Vault 4', 200)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="Vault32.jpg" alt=""></div><div>Vault 32 - 200 caps</div> <button onclick="add('Vault 32', 200)">Add to Cart</button></li>
+      </ul>
+    </div>
+    <div id="product-carousel7" class="carousel slide">
+    <ul id="product-list7" class="carousel slide">
+          <li><div class="carousel-item"><img src="Vault21.jpg" alt=""></div><div>Vault 21 - 200 caps</div> <button onclick="add('Vault 21', 200)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="Vault81.jpg" alt=""></div><div>Vault 81 - 200 caps</div> <button onclick="add('Vault 81', 200)">Add to Cart</button></li>
+          <li><div class="carousel-item"><img src="Vault31.jpg" alt=""></div><div>Vault 31 - 200 caps</div> <button onclick="add('Vault 31', 200)">Add to Cart</button></li>
+    </ul>
+  </div>
+    </div>
+  <div id="cart">
+    <h2>Cart</h2>
+    <ul id="cart-list"></ul>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function add(productName, price) {
+      cart.push({ name: productName, price: price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function remove(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartList = document.getElementById('cart-list');
+      cartList.innerHTML = '';
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `${item.name} - $${item.price} <button onclick="remove(${index})">Remove</button>`;
+        cartList.appendChild(li);
+      });
+    }
+
+    function checkout() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = "checkout.html";
+    }
+
+  
+    renderCart();
+    
+    const buttons = document.querySelectorAll('.carousel-button');
+    const carousel = document.getElementById('product-carousel');
+const productList = document.getElementById('product-list');
+
+
+let currentSlide = 0;
+const slideWidth = productList.offsetWidth;
+
+function moveSlide(direction) {
+  currentSlide += direction;
+  productList.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const direction = button.classList.contains('carousel-button-left') ? -1 : 1;
+    moveSlide(direction);
+  });
+});
+
+  </script>
+</body>
+</html>

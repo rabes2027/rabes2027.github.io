@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+    body {
+        font-family: fallout;
+    color: #10c110;
+    background-color: rgb(23, 21, 21);
+}
+
+@font-face {
+    font-family: fallout;
+    src: url(WHITRABT.TTF);
+}
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color:rgb(23, 21, 21);
+        border-radius: 8px;
+        border-style: dashed;
+        border-color: #10c110;
+    }
+
+    h1 {
+        text-align: center;
+        color: #10c110;
+    }
+
+    .member {
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .member img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .member h2 {
+        margin: 5px 0;
+        color:#10c110;
+        font-family: fallout;
+    }
+
+    .member p {
+        margin: 5px 0;
+        color: #10c110;
+    }
+    #references {
+        display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+
+    }
+    nav {
+  background-color:rgb(23, 21, 21); 
+  color:#10c110;  
+  border: #10c110;
+  padding: 2px;
+  border-style: dashed;
+  font-size: 25px;
+}
+
+nav ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0; 
+  display: flex; 
+}
+
+nav li {
+  margin-right: 20px; 
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+nav a:hover {
+  color: #00ff7b; 
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </nav>
+    <div class="container">
+        <h1 class="text-center">About Us</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="member text-center">
+                    <img src="raph.jpg" class="img-fluid rounded-circle" alt="">
+                    <h2>Raphael Abes</h2>
+                    <p>Functionality Coder</p>
+                    <p>Started with the baseline of the code. To ensure functionality of adding to cart, removing items, and submitting data from forms to the receiving page.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="member text-center">
+                    <img src="Dos.jpg" class="img-fluid rounded-circle" alt="">
+                    <h2>Dos Mongcal</h2>
+                    <p>Main Designer</p>
+                    <p>Worked on the main design. Placed pictures & items to the cart, and created the layout of the webpage. </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="member text-center">
+                    <img src="randee.avif" class="img-fluid rounded-circle" alt="">
+                    <h2>Randee Matias</h2>
+                    <p>Assistant Coder</p>
+                    <p>Helped in modifying the code and ensuring 0 errors.</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h2 style="text-align:center;">References Used</h2>
+        <img src="frame.png" id="references" class="img-fluid" alt="Responsive image">
+    </div>
+</body>
+</html>

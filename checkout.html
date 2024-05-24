@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+<style>
+  body{
+    font-family: fallout;
+    color: #10c110;
+    background-color: rgb(23, 21, 21);
+    font-size: 25px;
+}
+
+@font-face {
+    font-family: fallout;
+    src: url(WHITRABT.TTF);
+}
+form{
+  background-color:rgb(23, 21, 21) ;
+  color: #10c110;
+  border-style: dashed;
+}
+.name{
+  background-color:rgb(23, 21, 21) ;
+  color: #10c110;
+  border-style: dashed;
+  border-color: #10c110;
+}
+.checkoutform{
+  background-color:rgb(23, 21, 21) ;
+  color: #10c110;
+  border-style: dashed;
+  border-color: #10c110;
+}
+.submit{
+  background-color:rgb(23, 21, 21) ;
+  color: #10c110;
+  border-style: dashed;
+  border-color: #10c110;
+}
+input[type=submit]{
+  background-color:rgb(23, 21, 21) ;
+  color: #10c110;
+  border-style: dashed;
+  border-color: #10c110;
+  font-family: fallout;
+  padding: 10px;
+  margin: 4px 2px;
+}
+input[type=submit]:focus{
+  box-shadow:0px 0px 5px #10c110;
+}
+input[type=text]{
+  background-color:rgb(23, 21, 21) ;
+  color: #10c110;
+  border-style: dashed;
+  border-color: #10c110;
+  font-family: fallout;
+}
+input[type=email]{
+  background-color:rgb(23, 21, 21) ;
+  color: #10c110;
+  border-style: dashed;
+  border-color: #10c110;
+  font-family: fallout;
+}
+input[type=text]:focus{
+  border: 2px dashed;
+  background-color: rgb(23, 21, 21);
+  color: #10c110;
+  box-shadow:0px 0px 5px #10c110;
+  border-color: #10c110;
+}
+nav {
+  background-color:rgb(23, 21, 21); 
+  color:#10c110; 
+  padding: 10px; 
+  border: #10c110;
+  border-style: dashed;
+}
+
+nav ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0; 
+  display: flex; 
+}
+
+nav li {
+  margin-right: 20px; 
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+nav a:hover {
+  color: #00ff7b; 
+}
+.name:focus{
+  box-shadow:0px 0px 5px #10c110;
+}
+</style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+  </nav>
+  <h1>Checkout</h1>
+  <div id="checkout-form">
+    <h2>Please fill up this form to place your order.</h2>
+    <form id="form" method="GET" action="http://sirjm.infinityfreeapp.com/checkout.php">
+      <label for="name">Full Name:</label><br>
+      <input type="text" id="name" name="cust_name" required><br><br>
+      <label for="address">Recieving Address:</label><br>
+      <input type="text" id="address" name="cust_addr" required><br><br>
+      <label for="email">Email Address:</label><br>
+      <input type="email" id="email" name="cust_email" required><br><br>
+      <input type="hidden" id="cust_order" name="cust_order">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  
+  <div id="cart-summary">
+    <h2>Cart Summary</h2>
+    <ul id="cart-list"></ul>
+  </div>
+
+  <script>
+    function loadCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let cartList = document.getElementById('cart-list');
+      cartList.innerHTML = '';
+      cart.forEach((item) => {
+        let li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price}`;
+        cartList.appendChild(li);
+      });
+
+      let formattedCart = cart.map(item => ({
+        prod_name: item.name,
+        prod_price: item.price
+      }));
+
+      document.getElementById('cust_order').value = JSON.stringify(formattedCart);
+    }
+
+    document.getElementById('form').onsubmit = function() {
+      loadCart();
+    };
+
+    loadCart();
+  </script>
+</body>
+</html>
